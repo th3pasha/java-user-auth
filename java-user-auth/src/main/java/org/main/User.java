@@ -1,12 +1,15 @@
 package org.main;
 
+import java.util.UUID;
+
 public class User
 {
-    String userID, username, password;
+    UUID id;
+    String username, password;
 
-    public User(String userID, String username, String password)
+    public User(String username, String password)
     {
-        this.userID = userID;
+        this.id = UUID.randomUUID();
         this.username = username;
         this.password = password;
     }
@@ -14,12 +17,35 @@ public class User
     {
 
     }
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     @Override
     public String toString()
     {
         return "User{ " +
-                "userID='" + userID + '\'' +
+                "userID='" + id + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';

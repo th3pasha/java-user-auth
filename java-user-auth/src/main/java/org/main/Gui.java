@@ -10,7 +10,9 @@ public class Gui extends Frame
     JPasswordField passTextField;
     Button enterButton;
 
-    public Gui()
+    User user;
+
+    public Gui(User user)
     {
         setLayout(new FlowLayout(FlowLayout.LEADING));
         setSize(200,200);
@@ -30,18 +32,34 @@ public class Gui extends Frame
         setVisible(true);
         setResizable(false);
 
-
         enterButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if (enterButton.isEnabled())
+                {
+                    if (user.getUsername().equals(userTextField.getText()))
+                    {
+                        if (user.getPassword().equals(passTextField.getText()))
+                        {
 
+                            System.out.println("true");
+
+                        }
+                        else {
+                            System.out.println("false");
+                        }
+                    }
+                }
+                else
+                {
+                    System.out.println("false");
+                }
             }
         });
 
-
         addWindowListener(new WindowAdapter() {
             @Override
-            public void windowClosed(WindowEvent e) {
+            public void windowClosing(WindowEvent e) {
                 System.exit(0);
             }
         });

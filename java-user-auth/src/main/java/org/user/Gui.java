@@ -1,4 +1,7 @@
-package org.main;
+package org.user;
+
+import org.contacts.GuiAuth;
+import org.user.User;
 
 import javax.swing.*;
 import java.awt.*;
@@ -39,12 +42,12 @@ public class Gui extends Frame
                 {
                     for (int i = 0; i < users.size(); i++)
                     {
-
                         if (users.get(i).getUsername().equals(userTextField.getText()))
                         {
                             if (users.get(i).getPassword().equals(passTextField.getText()))
                             {
-                                System.out.println("true");
+                                dispose();
+                                GuiAuth guiauth = new GuiAuth(users);
                             }
                             else
                             {

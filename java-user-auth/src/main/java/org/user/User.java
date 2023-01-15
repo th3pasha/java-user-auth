@@ -1,6 +1,4 @@
-package org.main;
-
-import java.util.UUID;
+package org.user;
 
 public class User
 {

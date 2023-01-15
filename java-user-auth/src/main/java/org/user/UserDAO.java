@@ -1,4 +1,6 @@
-package org.main;
+package org.user;
+
+import org.user.User;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -38,5 +40,4 @@ public class UserDAO
 
         return users;
     }
-
 }
